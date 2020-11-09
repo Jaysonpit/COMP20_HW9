@@ -1,0 +1,82 @@
+
+[
+   {
+	"title": "All Along the Watchtower",
+	"artist": "Jimmy Hendrix",
+	"genre": ["Rock"],
+	"year" :  1968
+   },
+
+   {
+	"title": "Take You There",
+	"artist": "Sean Kingston",
+	"genre": ["Pop"],
+	"year" :  2007
+   },
+   
+
+   {
+	"title": "Dior",
+	"artist": "Pop Smoke",
+	"genre": ["Rap", "Hip-Hop"],
+	"year" :  2019
+   },
+   
+
+   {
+	"title": "Jamming",
+	"artist": "Bob Marley",
+	"genre": ["Reggae"],
+	"year" :  1977
+   },
+   
+
+   {
+	"title": "This Is How We Do It",
+	"artist": "Montell Jordan",
+	"genre": ["R&B", "Pop"],
+	"year" :  1995
+   },
+   
+
+   {
+	"title": "Halo",
+	"artist": "Beyonce",
+	"genre": ["Pop"],
+	"year" :  2008
+   },
+   
+
+   {
+	"title": "Ride Wit Me",
+	"artist": "Nelly",
+	"genre": ["Hip-Hop"],
+	"year" :  2000
+   },
+   
+
+   {
+	"title": "Thank Me Now",
+	"artist": "Drake",
+	"genre": ["Hip-Hop", "Rap"],
+	"year" :  2010
+   },
+   
+
+   {
+	"title": "Yellow Submarine",
+	"artist": "The Beatles",
+	"genre": ["Rock"],
+	"year" :  1966
+   },
+   
+
+   {
+	"title": "Macarena",
+	"artist": "Los Del Rio",
+	"genre": ["Latin Pop"],
+	"year" :  1993
+   }
+    
+   
+]
