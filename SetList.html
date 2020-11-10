@@ -1,0 +1,124 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title> JSON Set List </title>
+    <style>
+    .h3 {font-weight: 200; margin-bottom: -5px;}
+
+    </style>
+
+    <script>
+
+function load(){
+ var request = new XMLHttpRequest();
+ console.log("TEST 1");
+ request.open("GET", "https://jaysonpit.github.io/COMP20_HW9/SetList.json", true);
+ console.log("OPENED");
+ 
+ request.onreadystatechange = function(){
+  
+        console.log("3 - readystatechange event fired.");
+ 
+ if (request.readyState == 4 && request.status == 200) {
+     console.log("READY");
+
+     // Step 5: wait for done + success
+     console.log("5 - response received");
+     var result = request.responseText;
+
+     var parsedList = "", stringList = "";
+    parsedList = JSON.parse(result);
+    stringList = JSON.stringify(parsedList);
+    document.getElementById("data").innerHTML = stringList;
+    var items = "";
+
+    function showAll(){
+    parsedList.forEach(function myfunction(song) {
+    items += song.title + "<br>";
+    items += "By: " + song.artist + "<br>";
+    items += "Genre: " + song.genre + "<br>";
+    items += "Released: " + song.year + "<br><br>";
+    return items;
+        
+    })
+    
+    document.getElementById("data").innerHTML = items;
+}
+
+
+document.getElementById("filter").addEventListener("click", function (){
+    var output = "";
+if (document.getElementById("genreSelect").value == "All Genres"){
+    showAll();
+}
+else {
+    
+    var input = document.getElementById("genreSelect").value;
+        for (var x in parsedList){
+            for (var y in parsedList[x].genre){
+                if (parsedList[x].genre[y] == input){
+                    output += "<h3>" + parsedList[x].title + "</h3>";
+                    output += "By: " + parsedList[x].artist + "<br>";
+                    output += "Genre: " + parsedList[x].genre + "<br>"
+                    output += "Released: " + parsedList[x].year + "<br><br>";
+
+                }
+
+            }
+
+
+        }
+
+    document.getElementById("data").innerHTML = output;
+}
+
+
+})
+
+}
+ else if (request.readyState == 4 && request.status != 200) {
+
+     document.getElementById("data").innerHTML = "Something is wrong!  Check the logs to see where this went off the rails";
+
+ }
+
+}
+request.send();
+
+}
+</script>
+    </head>
+<body onload="load()">
+    <div id="data"></div>
+<h1> JSON Set List</h1>
+<h2> Select a Genre</h2>
+<form>
+
+    <select id="genreSelect">
+            <option>All Genres</option>
+            <option>Hip-Hop</option>
+            <option>Latin Pop</option>
+            <option>Pop</option>
+            <option>Rap</option>
+            <option>R&B</option>
+            <option>Reggae</option>
+            <option>Rock</option>
+    </select>
+    <input type="button" id="filter" Value="Select Genre"></button>
+    </form>
+
+
+
+
+</form>
+<script>
+   
+</script>
+    
+
+</body>
+
+
+</html>
+
